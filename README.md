@@ -20,10 +20,15 @@ text.
   way.
 - `felidae-indent-line` — a lighter-weight heuristic indent function wired
   up as `indent-line-function`, for interactive typing.
-- `felidae-run-file` (`C-c C-r`), `felidae-check-file` (`C-c C-c`),
-  `felidae-visualize-file` (`C-c C-v`) — shell out to the `felidae`,
-  `felidae_debug`, and `celidae` executables respectively, via
-  `compile`/`compilation-mode`.
+- `felidae-run-file` (`C-c C-r`) and `felidae-visualize-file` (`C-c C-v`) shell out to
+  `felidae` and `celidae` via `compile`/`compilation-mode`.
+- `felidae-check-file` (`C-c C-c`) runs `felidae --check-json` and lists the problems in
+  `*Felidae Check*`, where `next-error` (`M-g n`) walks them.
+- `felidae-repl` (`C-c C-z`) opens `felidae --repl` in a comint buffer, in the file's folder
+  (the REPL reads `./init.fx`); `felidae-send-to-repl` (`C-c C-s`) sends the region, or the
+  current line.
+- The language-server registration (`felidae-enable-lsp`) is off by default: the interpreter
+  no longer provides `--lsp`.
 
 ## Installation
 
